@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graf" app:startDestination="@id/mainFragment">
+
+    <fragment android:id="@+id/mainFragment" android:name="com.example.notepanda.MainFragment"
+              android:label="MainFragment">
+        <action android:id="@+id/action_mainFragment_to_addNewTextNote" app:destination="@id/addNewTextNote"/>
+        <action android:id="@+id/action_mainFragment_to_viewTextNote" app:destination="@id/viewTextNote"/>
+    </fragment>
+    <fragment android:id="@+id/addNewTextNote" android:name="com.example.notepanda.AddNewTextNote"
+              android:label="AddNewTextNote">
+        <action android:id="@+id/action_addNewTextNote_to_mainFragment" app:destination="@id/mainFragment"/>
+    </fragment>
+    <fragment android:id="@+id/viewTextNote" android:name="com.example.notepanda.ViewTextNote"
+              android:label="fragment_view_text_note" tools:layout="@layout/fragment_view_text_note">
+        <argument android:name="NoteID"
+                  app:argType="integer"
+                  android:defaultValue="0"/>
+        <action android:id="@+id/action_viewTextNote_to_mainFragment" app:destination="@id/mainFragment"/>
+    </fragment>
+</navigation>
